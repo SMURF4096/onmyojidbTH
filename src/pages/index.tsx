@@ -8,63 +8,62 @@ export default function Home(): JSX.Element {
 
   return (
     <Layout
-      title="Billboard"
+      title="Home"
       description="Onmyoji Shikigami Database">
 
-      <div className="billboard-container">
+      {/* HERO SECTION - Adaptive Docusaurus Style */}
+      <div className="hero hero--primary" style={{ padding: '4rem 0', textAlign: 'center' }}>
+        <div className="container">
+          <h1 className="hero__title">Onmyoji Database</h1>
+          <p className="hero__subtitle">The comprehensive guide to Shikigami, Souls, and Events.</p>
+          <div style={{ marginTop: '2rem' }}>
+            <Link
+              className="button button--secondary button--lg"
+              to="/shikigami">
+              Browse Shikigami
+            </Link>
+          </div>
+        </div>
+      </div>
 
-        {/* HERO BILLBOARD */}
-        <div className="billboard-hero">
-          <img
-            src="/onmyojidbTH/img/shikigami/SSR/taira-no-masakado/full.png"
-            alt="Taira no Masakado"
-          />
-          <div className="billboard-overlay">
-            <h1 className="billboard-title">TAIRA NO MASAKADO</h1>
-            <p style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
-              The legendary samurai returns. Wield the power of the Futsunomitama and dominate the battlefield.
-            </p>
-            <div style={{ marginTop: '2rem' }}>
-              <Link
-                to="/docs/shikigami/SSR/taira-no-masakado"
-                className="button button--primary button--lg"
-                style={{ background: 'var(--heian-gold)', border: 'none', color: '#000', fontWeight: 'bold' }}
-              >
-                View Profile
-              </Link>
-            </div>
+      <div className="container" style={{ padding: '3rem 0' }}>
+
+        {/* LATEST NEWS / TICKER REPLACEMENT */}
+        <div style={{
+          background: 'var(--ifm-background-surface-color)',
+          border: '1px solid var(--ifm-color-emphasis-200)',
+          borderRadius: '12px',
+          padding: '1.5rem',
+          marginBottom: '3rem',
+          textAlign: 'center'
+        }}>
+          <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Latest Updates</h2>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+            <Link to="/events" style={{ fontWeight: 'bold' }}>🔥 Annual 520 Livestream</Link>
+            <Link to="/docs/shikigami/SSR/taira-no-masakado">⚔️ New SSR: Taira no Masakado</Link>
+            <Link to="#">⚖️ Skill Adjustments</Link>
           </div>
         </div>
 
-        {/* NEWS TICKER */}
-        <div className="news-scroll-container">
-          <div className="news-scroll-inner">
-            <Link to="/events" className="news-item">🔥 [Event] Annual 520 Livestream Now Live!</Link>
-            <Link to="/docs/shikigami/SSR/taira-no-masakado" className="news-item">⚔️ [New] Taira no Masakado Arrives</Link>
-            <Link to="#" className="news-item">👘 [Skin] New Kotodama Skin Available</Link>
-            <Link to="#" className="news-item">⚖️ [Balance] Recent Skill Adjustments</Link>
-          </div>
-        </div>
-
-        {/* FEATURED SECTIONS */}
-        <div className="heian-grid">
-          <HeianCard
+        {/* FEATURE CARDS - Matching Soul/Shikigami Style */}
+        <div className="row">
+          <FeatureCard
             title="Events"
-            desc="Check out the latest ongoing and upcoming events in Heian-Kyo."
-            image="/onmyojidbTH/img/shikigami/SSR/amaterasu/full.png" // Placeholder or different image
+            description="Check out current and upcoming events."
             link="/events"
+            icon="🎉"
           />
-          <HeianCard
-            title="Shikigami"
-            desc="Explore the complete database of spirits and warriors."
-            image="/onmyojidbTH/img/shikigami/SSR/susanoo/full.png" // Placeholder or different image
+          <FeatureCard
+            title="Shikigami Library"
+            description="Search and filter all Shikigami."
             link="/shikigami"
+            icon="👺"
           />
-          <HeianCard
-            title="Strategies"
-            desc="Master the mechanics of souls, zones, and duels."
-            image="/onmyojidbTH/img/shikigami/SSR/fukengaku/full.png" // Placeholder or different image
-            link="/docs/soul"
+          <FeatureCard
+            title="Soul Library"
+            description="Browse souls and their effects."
+            link="/soul"
+            icon="🔮"
           />
         </div>
 
@@ -73,18 +72,37 @@ export default function Home(): JSX.Element {
   );
 }
 
-function HeianCard({ title, desc, image, link }) {
+function FeatureCard({ title, description, link, icon }) {
   return (
-    <Link to={link} className="heian-card" style={{ textDecoration: 'none', display: 'block' }}>
-      <img src={image} alt={title} className="heian-card-image" onError={(e) => {
-        e.currentTarget.style.display = 'none';
-        e.currentTarget.parentElement.style.background = '#2a2a2a';
-        e.currentTarget.parentElement.innerHTML = '<div style="height:200px; display:flex; align-items:center; justify-content:center; color:#555">Image</div>';
-      }} />
-      <div className="heian-card-content">
-        <h3 className="heian-card-title">{title}</h3>
-        <p className="heian-card-desc">{desc}</p>
-      </div>
-    </Link>
+    <div className="col col--4">
+      <Link
+        to={link}
+        style={{
+          textDecoration: 'none',
+          color: 'inherit',
+          display: 'block',
+          height: '100%',
+          padding: '2rem',
+          borderRadius: '12px',
+          border: '1px solid var(--ifm-color-emphasis-200)',
+          background: 'var(--ifm-background-surface-color)',
+          transition: 'all 0.3s',
+          textAlign: 'center',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'translateY(-4px)';
+          e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.1)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+        }}
+      >
+        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{icon}</div>
+        <h3 style={{ marginBottom: '1rem' }}>{title}</h3>
+        <p style={{ color: 'var(--ifm-color-emphasis-600)' }}>{description}</p>
+      </Link>
+    </div>
   );
 }

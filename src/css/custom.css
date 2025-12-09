@@ -21,17 +21,10 @@
   --heian-gold: #c5a059;
 }
 
-/* Force Dark Mode aesthetic everywhere */
-html[data-theme='light'] {
-  --ifm-color-primary: #8a1a1a;
-  /* Red for light mode if used, but we prefer dark */
-  --ifm-background-color: #f4f0e6;
-  /* Paper color */
-}
-
-html[data-theme='dark'] {
-  --ifm-background-color: #121212;
-  --ifm-background-surface-color: #1e1e1e;
+/* Dark mode overrides */
+[data-theme='dark'] {
+  --ifm-background-color: #1b1b1d;
+  --ifm-background-surface-color: #242526;
 }
 
 /* Billboard Layout */
