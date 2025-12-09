@@ -8,126 +8,82 @@ export default function Home(): JSX.Element {
 
   return (
     <Layout
-      title="Wiki"
+      title="Billboard"
       description="Onmyoji Shikigami Database">
 
-      <div className="wiki-container">
-        <div className="wiki-grid">
+      <div className="billboard-container">
 
-          {/* MAIN COLUMN */}
-          <div className="wiki-main">
-
-            {/* LATEST NEWS */}
-            <div className="wiki-section">
-              <div className="wiki-header">
-                <h2>Latest</h2>
-              </div>
-              <ul className="wiki-list">
-                <li><Link to="/docs/shikigami/SSR/taira-no-masakado">New SSR Shikigami: Taira no Masakado</Link></li>
-                <li><Link to="/shikigami">Shikigami List Updated</Link></li>
-                <li><Link to="#">New Skin: Kotodama</Link></li>
-                <li><Link to="#">Event: Annual 520 Livestream</Link></li>
-              </ul>
+        {/* HERO BILLBOARD */}
+        <div className="billboard-hero">
+          <img
+            src="/onmyojidbTH/img/shikigami/SSR/taira-no-masakado/full.png"
+            alt="Taira no Masakado"
+          />
+          <div className="billboard-overlay">
+            <h1 className="billboard-title">TAIRA NO MASAKADO</h1>
+            <p style={{ fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
+              The legendary samurai returns. Wield the power of the Futsunomitama and dominate the battlefield.
+            </p>
+            <div style={{ marginTop: '2rem' }}>
+              <Link
+                to="/docs/shikigami/SSR/taira-no-masakado"
+                className="button button--primary button--lg"
+                style={{ background: 'var(--heian-gold)', border: 'none', color: '#000', fontWeight: 'bold' }}
+              >
+                View Profile
+              </Link>
             </div>
-
-            {/* NEW SHIKIGAMI SECTION */}
-            <div className="wiki-section">
-              <div className="wiki-header">
-                <h2>New SSR Shikigami!</h2>
-              </div>
-              <div className="wiki-featured-grid">
-                <WikiCard
-                  title="Taira no Masakado"
-                  image="/onmyojidbTH/img/shikigami/SSR/taira-no-masakado/full.png"
-                  link="/docs/shikigami/SSR/taira-no-masakado"
-                />
-                <WikiCard
-                  title="Amaterasu"
-                  image="/onmyojidbTH/img/shikigami/SSR/amaterasu/icon.png"
-                  link="/docs/shikigami/SSR/amaterasu"
-                />
-                <WikiCard
-                  title="Susanoo"
-                  image="/onmyojidbTH/img/shikigami/SSR/susanoo/icon.png"
-                  link="/docs/shikigami/SSR/susanoo"
-                />
-              </div>
-            </div>
-
-            {/* ARCHIVES */}
-            <div className="wiki-section">
-              <div className="wiki-header">
-                <h2>Archives</h2>
-              </div>
-              <ul className="wiki-list">
-                <li><Link to="#">Story Archive</Link></li>
-                <li><Link to="#">Event Archive</Link></li>
-                <li><Link to="#">Skill Adjustments</Link></li>
-              </ul>
-            </div>
-
           </div>
-
-          {/* SIDEBAR COLUMN */}
-          <div className="wiki-sidebar">
-
-            <div className="wiki-section">
-              <div className="wiki-header">
-                <h2>Game Features</h2>
-              </div>
-              <ul className="wiki-list">
-                <li><Link to="/shikigami">Shikigami List</Link></li>
-                <li><Link to="#">Soul Zones</Link></li>
-                <li><Link to="#">Secret Zones</Link></li>
-                <li><Link to="#">Duel Guide</Link></li>
-                <li><Link to="#">Wanted Quests</Link></li>
-                <li><Link to="#">Guilds</Link></li>
-              </ul>
-            </div>
-
-            <div className="wiki-section">
-              <div className="wiki-header">
-                <h2>Server Time</h2>
-              </div>
-              <div style={{ padding: '0.5rem', background: 'var(--ifm-background-surface-color)', borderRadius: '4px', border: '1px solid var(--wiki-border-color)' }}>
-                <div style={{ marginBottom: '0.5rem' }}><strong>Global:</strong> {new Date().toLocaleTimeString()}</div>
-                <div style={{ marginBottom: '0.5rem' }}><strong>CN:</strong> {new Date().toLocaleTimeString('en-US', { timeZone: 'Asia/Shanghai' })}</div>
-                <div><strong>JP:</strong> {new Date().toLocaleTimeString('en-US', { timeZone: 'Asia/Tokyo' })}</div>
-              </div>
-            </div>
-
-            <div className="wiki-section">
-              <div className="wiki-header">
-                <h2>Social Media</h2>
-              </div>
-              <ul className="wiki-list">
-                <li><Link to="https://twitter.com/Onmyojigame">Twitter (Global)</Link></li>
-                <li><Link to="https://www.facebook.com/Onmyojigame/">Facebook (Global)</Link></li>
-                <li><Link to="https://discord.gg/onmyoji">Discord</Link></li>
-              </ul>
-            </div>
-
-          </div>
-
         </div>
+
+        {/* NEWS TICKER */}
+        <div className="news-scroll-container">
+          <div className="news-scroll-inner">
+            <Link to="/events" className="news-item">🔥 [Event] Annual 520 Livestream Now Live!</Link>
+            <Link to="/docs/shikigami/SSR/taira-no-masakado" className="news-item">⚔️ [New] Taira no Masakado Arrives</Link>
+            <Link to="#" className="news-item">👘 [Skin] New Kotodama Skin Available</Link>
+            <Link to="#" className="news-item">⚖️ [Balance] Recent Skill Adjustments</Link>
+          </div>
+        </div>
+
+        {/* FEATURED SECTIONS */}
+        <div className="heian-grid">
+          <HeianCard
+            title="Events"
+            desc="Check out the latest ongoing and upcoming events in Heian-Kyo."
+            image="/onmyojidbTH/img/shikigami/SSR/amaterasu/full.png" // Placeholder or different image
+            link="/events"
+          />
+          <HeianCard
+            title="Shikigami"
+            desc="Explore the complete database of spirits and warriors."
+            image="/onmyojidbTH/img/shikigami/SSR/susanoo/full.png" // Placeholder or different image
+            link="/shikigami"
+          />
+          <HeianCard
+            title="Strategies"
+            desc="Master the mechanics of souls, zones, and duels."
+            image="/onmyojidbTH/img/shikigami/SSR/fukengaku/full.png" // Placeholder or different image
+            link="/docs/soul"
+          />
+        </div>
+
       </div>
     </Layout>
   );
 }
 
-function WikiCard({ title, image, link }) {
+function HeianCard({ title, desc, image, link }) {
   return (
-    <Link to={link} className="wiki-card" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-      <div className="wiki-card-image">
-        <img src={image} alt={title} onError={(e) => {
-          e.currentTarget.style.display = 'none';
-          e.currentTarget.parentElement.style.background = '#ccc';
-          e.currentTarget.parentElement.innerHTML = '<span style="font-size:2rem">ERROR</span>';
-        }} />
-      </div>
-      <div className="wiki-card-content">
-        <div className="wiki-card-title">{title}</div>
-        <div className="wiki-card-link">Read more &gt;</div>
+    <Link to={link} className="heian-card" style={{ textDecoration: 'none', display: 'block' }}>
+      <img src={image} alt={title} className="heian-card-image" onError={(e) => {
+        e.currentTarget.style.display = 'none';
+        e.currentTarget.parentElement.style.background = '#2a2a2a';
+        e.currentTarget.parentElement.innerHTML = '<div style="height:200px; display:flex; align-items:center; justify-content:center; color:#555">Image</div>';
+      }} />
+      <div className="heian-card-content">
+        <h3 className="heian-card-title">{title}</h3>
+        <p className="heian-card-desc">{desc}</p>
       </div>
     </Link>
   );
