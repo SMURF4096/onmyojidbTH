@@ -71,8 +71,8 @@ const config: Config = {
       items: [
         { to: '/', label: 'Home', position: 'left' },
         { to: '/shikigami', label: 'Shikigami', position: 'left' },
+        { to: '/soul', label: 'Soul', position: 'left' },
         { to: '/events', label: 'Events', position: 'left' },
-        { to: '/docs/soul', label: 'Soul', position: 'left' },
         { to: '/docs', label: 'Onmyoji', position: 'left' },
         {
           href: 'https://github.com/ssig31025/onmyojidbTH',
