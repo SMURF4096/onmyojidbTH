@@ -7,6 +7,8 @@ interface GlossaryTooltipProps {
 }
 
 export default function GlossaryTooltip({ term, title, description }: GlossaryTooltipProps): JSX.Element {
+    const [isOpen, setIsOpen] = useState(false);
+    const tooltipRef = useRef<HTMLSpanElement>(null);
     const [isMobile, setIsMobile] = useState(false);
 
     // Close when clicking outside
