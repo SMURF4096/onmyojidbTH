@@ -169,24 +169,15 @@ When casting Eternal Blazing Sun, enhances Futsunomitama once.
 When attacked, recovers HP equal to 500% of starting DEF (up to 70% of starting ATK) and enhances Futsunomitama once (can be enhanced once per turn).
 
 **Futsunomitama** <img src="/onmyojidbTH/img/shikigami/SSR/taira-no-masakado/futsunomitama.webp" width="20" />
-After every 3 enhancements, Taira no Masakado immediately enters **Rift in Time**.
+After every 3 enhancements, Taira no Masakado immediately enters <GlossaryTooltip term="Rift in Time" title="Rift in Time (时之隙)" description="Traverse in the rupture of time and space where actions are not counted towards a turn and are regarded as outside of turn actions." />.
 
-**Transferred Damage**
-One of the types of damage, cannot crit, is due to some shikigami skills being able to distribute damage, such as Shouzu's link and Ushi no Toki's doll.
 
-**Recover**
-Different from healing or restoring, cannot Crit, unaffected by reduced healing effects and does not trigger effects related to healing.
-
-**Control Effect**
-Freeze, Sleep, Confuse, Taunt, Silence, Bind, Morph, Daze, Provocation, Deep Freeze, Frostbound, Shadowbound, Fettered, Ruined, and Rest in Ice are considered to be control effects. The final 9 cannot be dispelled. Frostbound cannot be dispelled or removed.
-
-**Rift in Time (时之隙)**
-Traverse in the rupture of time and space where actions are not counted towards a turn and are regarded as outside of turn actions.
+import GlossaryTooltip from '@site/src/components/GlossaryTooltip';
 
 **Level Up Effects:**
-- **Lv.2**: After **Rift in Time** ends, reduces own duration of received **debuffs** and **control effects** by 1 turn.
-- **Lv.3**: While in **Rift in Time**, Eternal Blazing Sun's orb cost is reduced by 2.
-- **Lv.4**: Defensive Stance's **recover** effect also applies to other allies, with the amount equal to 70% of their own stats (does not trigger when affected by **transferred damage**).
+- **Lv.2**: After <GlossaryTooltip term="Rift in Time" title="Rift in Time (时之隙)" description="Traverse in the rupture of time and space where actions are not counted towards a turn and are regarded as outside of turn actions." /> ends, reduces own duration of received <GlossaryTooltip term="debuffs" title="Debuffs" description="Negative status effects." /> and <GlossaryTooltip term="control effects" title="Control Effect" description={<div><p style={{marginBottom: '0.5rem'}}>Freeze, Sleep, Confuse, Taunt, Silence, Bind, Morph, Daze, Provocation, Deep Freeze, Frostbound, Shadowbound, Fettered, Ruined, and Rest in Ice are considered to be control effects.</p><div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem'}}><div style={{display:'flex', alignItems:'center', gap:'4px'}}><img src="/onmyojidbTH/img/center/controleffect/freeze.webp" width="20"/> Freeze</div><div style={{display:'flex', alignItems:'center', gap:'4px'}}><img src="/onmyojidbTH/img/center/controleffect/sleep.webp" width="20"/> Sleep</div><div style={{display:'flex', alignItems:'center', gap:'4px'}}><img src="/onmyojidbTH/img/center/controleffect/confuse.webp" width="20"/> Confuse</div><div style={{display:'flex', alignItems:'center', gap:'4px'}}><img src="/onmyojidbTH/img/center/controleffect/taunt.webp" width="20"/> Taunt</div><div style={{display:'flex', alignItems:'center', gap:'4px'}}><img src="/onmyojidbTH/img/center/controleffect/silence.webp" width="20"/> Silence</div><div style={{display:'flex', alignItems:'center', gap:'4px'}}><img src="/onmyojidbTH/img/center/controleffect/morph.webp" width="20"/> Morph</div><div style={{display:'flex', alignItems:'center', gap:'4px'}}><img src="/onmyojidbTH/img/center/controleffect/daze.webp" width="20"/> Daze</div><div style={{display:'flex', alignItems:'center', gap:'4px'}}><img src="/onmyojidbTH/img/center/controleffect/provocation.webp" width="20"/> Provocation</div><div style={{display:'flex', alignItems:'center', gap:'4px'}}><img src="/onmyojidbTH/img/center/controleffect/deepfreeze.webp" width="20"/> Deep Freeze</div><div style={{display:'flex', alignItems:'center', gap:'4px'}}><img src="/onmyojidbTH/img/center/controleffect/frostbound.webp" width="20"/> Frostbound</div><div style={{display:'flex', alignItems:'center', gap:'4px'}}><img src="/onmyojidbTH/img/center/controleffect/ruined.webp" width="20"/> Ruined</div></div><p style={{marginTop: '0.5rem', fontSize: '0.85rem', color: '#aaa'}}>The final 9 cannot be dispelled. Frostbound cannot be dispelled or removed.</p></div>} /> by 1 turn.
+- **Lv.3**: While in <GlossaryTooltip term="Rift in Time" title="Rift in Time (时之隙)" description="Traverse in the rupture of time and space where actions are not counted towards a turn and are regarded as outside of turn actions." />, Eternal Blazing Sun's orb cost is reduced by 2.
+- **Lv.4**: Defensive Stance's <GlossaryTooltip term="recover" title="Recover" description="Different from healing or restoring, cannot Crit, unaffected by reduced healing effects and does not trigger effects related to healing." /> effect also applies to other allies, with the amount equal to 70% of their own stats (does not trigger when affected by <GlossaryTooltip term="transferred damage" title="Transferred Damage" description="One of the types of damage, cannot crit, is due to some shikigami skills being able to distribute damage, such as Shouzu's link, Ushi no Toki's doll and Ink-chased's Hana SP." />).
 - **Lv.5**: While in Offensive Stance, each time Futsunomitama is enhanced, Eternal Blazing Sun's AoE multiplier increases by 5% (max 15%).
 
 ---
@@ -204,10 +195,7 @@ Taira no Masakado attacks all enemies 3 times, dealing **64% ATK** damage each h
 One of the types of damage, ignores DEF and damage reduction effects.
 
 **Futsunomitama** <img src="/onmyojidbTH/img/shikigami/SSR/taira-no-masakado/futsunomitama.webp" width="20" />
-After every 3 enhancements, Taira no Masakado immediately enters **Rift in Time**.
-
-**Rift in Time (时之隙)**
-Traverse in the rupture of time and space where actions are not counted towards a turn and are regarded as outside of turn actions.
+After every 3 enhancements, Taira no Masakado immediately enters <GlossaryTooltip term="Rift in Time" title="Rift in Time (时之隙)" description="Traverse in the rupture of time and space where actions are not counted towards a turn and are regarded as outside of turn actions." />.
 
 **Level Up Effects:**
 - **Lv.2**: Increases AoE damage to 68%
