@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import { shikigamiList } from '@site/src/data/shikigami-list';
 
-const RARITIES = ['All', 'UR', 'SP', 'SSR', 'SR', 'R', 'N', 'SSN', 'M'];
+const RARITIES = ['All', 'UR', 'SP', 'SSR', 'SR', 'R', 'N', 'M'];
 const ALPHABET = '#ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 export default function ShikigamiList(): JSX.Element {
@@ -58,7 +58,6 @@ export default function ShikigamiList(): JSX.Element {
       'SR': 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
       'R': 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)',
       'N': 'linear-gradient(135deg, #9ca3af 0%, #6b7280 100%)',
-      'SSN': 'linear-gradient(135deg, #84cc16 0%, #65a30d 100%)',
       'M': 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)',
     };
     return colors[rarity] || '#999';
@@ -107,7 +106,7 @@ export default function ShikigamiList(): JSX.Element {
                 key={rarity}
                 onClick={() => setSelectedRarity(rarity)}
                 style={{
-                  padding: '0.6rem 1.5rem',
+                  padding: rarity === 'All' || rarity === 'M' ? '0.6rem 1.5rem' : '0.4rem 1rem',
                   borderRadius: '1.5rem',
                   border: 'none',
                   fontWeight: 'bold',
@@ -118,10 +117,18 @@ export default function ShikigamiList(): JSX.Element {
                     : 'var(--ifm-color-emphasis-200)',
                   color: selectedRarity === rarity ? 'white' : 'var(--ifm-font-color-base)',
                   transition: 'all 0.2s',
-                  transform: selectedRarity === rarity ? 'scale(1.05)' : 'scale(1)'
+                  transform: selectedRarity === rarity ? 'scale(1.05)' : 'scale(1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem'
                 }}
               >
-                {rarity}
+
+                <img
+                  src={`/onmyojidbTH/img/center/rarity/${rarity.toLowerCase()}.webp`}
+                  alt={rarity}
+                  style={{ height: '24px', filter: selectedRarity === rarity ? 'brightness(0) invert(1)' : 'none' }}
+                />
               </button>
             ))}
           </div>

@@ -22,8 +22,8 @@ effect_res: 0%
 # Taira no Masakado
 
 <div style={{
-  display: 'grid',
-  gridTemplateColumns: '300px 1fr',
+  display: 'flex',
+  flexWrap: 'wrap',
   gap: '2rem',
   marginBottom: '2rem',
   padding: '1.5rem',
@@ -50,48 +50,64 @@ effect_res: 0%
     </div>
   </div>
   
-  <div>
+  <div style={{width: '100%'}}>
     <h3 style={{marginTop: 0, marginBottom: '1rem', color: 'var(--ifm-color-primary)'}}>Base Stats</h3>
-    <table style={{width: '100%', borderCollapse: 'separate', borderSpacing: '0 8px'}}>
-      <tbody>
-        <tr style={{background: 'var(--ifm-background-color)'}}>
-          <td style={{padding: '8px', width: '120px'}}><strong>Attack</strong></td>
-          <td style={{padding: '8px', width: '100px'}}>4020</td>
-          <td style={{padding: '8px'}}><span style={{background: '#ff6b6b', color: 'white', padding: '4px 12px', borderRadius: '6px', fontSize: '12px', fontWeight: 'bold'}}>SS</span></td>
-        </tr>
-        <tr style={{background: 'var(--ifm-background-color)'}}>
-          <td style={{padding: '8px'}}><strong>Health</strong></td>
-          <td style={{padding: '8px'}}>10254</td>
-          <td style={{padding: '8px'}}><span style={{background: '#4ecdc4', color: 'white', padding: '4px 12px', borderRadius: '6px', fontSize: '12px', fontWeight: 'bold'}}>B</span></td>
-        </tr>
-        <tr style={{background: 'var(--ifm-background-color)'}}>
-          <td style={{padding: '8px'}}><strong>Defense</strong></td>
-          <td style={{padding: '8px'}}>595</td>
-          <td style={{padding: '8px'}}><span style={{background: '#ff6b6b', color: 'white', padding: '4px 12px', borderRadius: '6px', fontSize: '12px', fontWeight: 'bold'}}>SS</span></td>
-        </tr>
-        <tr style={{background: 'var(--ifm-background-color)'}}>
-          <td style={{padding: '8px'}}><strong>Speed</strong></td>
-          <td style={{padding: '8px'}}>116</td>
-          <td style={{padding: '8px'}}><span style={{background: '#ffd93d', color: '#000', padding: '4px 12px', borderRadius: '6px', fontSize: '12px', fontWeight: 'bold'}}>S</span></td>
-        </tr>
-        <tr style={{background: 'var(--ifm-background-color)'}}>
-          <td style={{padding: '8px'}}><strong>Crit Rate</strong></td>
-          <td style={{padding: '8px'}} colSpan="2">10%</td>
-        </tr>
-        <tr style={{background: 'var(--ifm-background-color)'}}>
-          <td style={{padding: '8px'}}><strong>Crit Damage</strong></td>
-          <td style={{padding: '8px'}} colSpan="2">160%</td>
-        </tr>
-        <tr style={{background: 'var(--ifm-background-color)'}}>
-          <td style={{padding: '8px'}}><strong>Effect Hit</strong></td>
-          <td style={{padding: '8px'}} colSpan="2">0%</td>
-        </tr>
-        <tr style={{background: 'var(--ifm-background-color)'}}>
-          <td style={{padding: '8px'}}><strong>Effect Res</strong></td>
-          <td style={{padding: '8px'}} colSpan="2">0%</td>
-        </tr>
-      </tbody>
-    </table>
+    
+    <div className="stats-grid" style={{
+        display: 'grid', 
+        gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', 
+        gap: '0.5rem',
+        background: 'var(--ifm-background-color)',
+        padding: '1rem',
+        borderRadius: '8px'
+    }}>
+        {/* ROW 1: ATK */}
+        <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'1px solid var(--ifm-color-emphasis-200)', padding:'0.5rem'}}>
+            <strong>Attack</strong>
+            <span>4020</span>
+            <img src="/onmyojidbTH/img/center/indicate/ss.webp" alt="SS" height="24" />
+        </div>
+        {/* ROW 2: HP */}
+         <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'1px solid var(--ifm-color-emphasis-200)', padding:'0.5rem'}}>
+            <strong>Health</strong>
+            <span>10254</span>
+            <img src="/onmyojidbTH/img/center/indicate/b.webp" alt="B" height="24" />
+        </div>
+        {/* ROW 3: DEF */}
+         <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'1px solid var(--ifm-color-emphasis-200)', padding:'0.5rem'}}>
+            <strong>Defense</strong>
+            <span>595</span>
+            <img src="/onmyojidbTH/img/center/indicate/ss.webp" alt="SS" height="24" />
+        </div>
+        {/* ROW 4: SPD */}
+         <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'1px solid var(--ifm-color-emphasis-200)', padding:'0.5rem'}}>
+            <strong>Speed</strong>
+            <span>116</span>
+            <img src="/onmyojidbTH/img/center/indicate/s.webp" alt="S" height="24" />
+        </div>
+        {/* ROW 5: CRIT */}
+         <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'1px solid var(--ifm-color-emphasis-200)', padding:'0.5rem'}}>
+            <strong>Crit Rate</strong>
+            <span>10%</span>
+             <img src="/onmyojidbTH/img/center/indicate/s.webp" alt="S" height="24" />
+        </div>
+         {/* ROW 6: CDMG */}
+         <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'1px solid var(--ifm-color-emphasis-200)', padding:'0.5rem'}}>
+            <strong>Crit Dmg</strong>
+            <span>160%</span>
+            <img src="/onmyojidbTH/img/center/indicate/s.webp" alt="S" height="24" />
+        </div>
+         {/* ROW 7: HIT */}
+         <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'1px solid var(--ifm-color-emphasis-200)', padding:'0.5rem'}}>
+            <strong>Effect Hit</strong>
+            <span>0%</span>
+        </div>
+         {/* ROW 8: RES */}
+         <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', borderBottom:'1px solid var(--ifm-color-emphasis-200)', padding:'0.5rem'}}>
+            <strong>Effect Res</strong>
+            <span>0%</span>
+        </div>
+    </div>
     
     <div style={{marginTop: '1.5rem'}}>
       <strong style={{marginRight: '0.5rem'}}>Roles:</strong>

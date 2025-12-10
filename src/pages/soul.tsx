@@ -99,7 +99,7 @@ export default function SoulList(): JSX.Element {
                 }}>
                     {filteredSouls.map(soul => (
                         <Link
-                            to={`/soul-profile-mockup?id=${soul.id}`}
+                            to={`/soul-profile?id=${soul.id}`}
                             key={soul.id}
                             style={{
                                 textDecoration: 'none',
